@@ -1,6 +1,11 @@
+''' Importamos a biblioteca NLTK e as funcionalidades que iremos precisar'''
 import nltk
 from nltk.chat.util import Chat, reflections
+
+''' O usuario insere o nome pelo qual deseja ser chamado'''
 nome=str(input('por favor antes de iniciar a conversa digite seu nome:'))
+
+'''Parcov é abreviação de 'pares de conversa'. Basicamente, estamos definindo 'o que' e 'como' o bot vai responder.'''
 parcov= parcov = [
    ('oi', ['oi ! como você está ?']),
    ('estou bem obrigado por perguntar', ['seu nome é {}, né ?'.format(nome)]),
@@ -9,6 +14,8 @@ parcov= parcov = [
    ('eu tbm',['meu favorito é o morango, e o seu ?']),
    ('O meu tbm',['que conhecidencia.']),
 ]
+
+'''Definindo a função para o usuario interagir com o bot e iniciar o chat'''
 def iniciarchat():
     print(f'bem vindo {nome}')
     chatbot=Chat(parcov,reflections)
@@ -23,4 +30,5 @@ def iniciarchat():
             respchat = chatbot.respond(resposta)
             print('Chat{}',respchat)
 nltk.download('punkt')
+''' Iniciando'''
 iniciarchat()
