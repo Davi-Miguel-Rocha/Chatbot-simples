@@ -1,34 +1,37 @@
-''' Importamos a biblioteca NLTK e as funcionalidades que iremos precisar'''
+# Importamos a biblioteca NLTK e as funcionalidades que iremos precisar
 import nltk
 from nltk.chat.util import Chat, reflections
 
-''' O usuario insere o nome pelo qual deseja ser chamado'''
-nome=str(input('por favor antes de iniciar a conversa digite seu nome:'))
+# O usuário insere o nome pelo qual deseja ser chamado
+nome = str(input('Por favor, antes de iniciar a conversa, digite seu nome: '))
 
-'''Parcov é abreviação de 'pares de conversa'. Basicamente, estamos definindo 'o que' e 'como' o bot vai responder.'''
-parcov= parcov = [
-   ('oi', ['oi ! como você está ?']),
-   ('estou bem obrigado por perguntar', ['seu nome é {}, né ?'.format(nome)]),
-   ('sim e o seu ?',['meu nome é danone']),
-   ('prazer bot',['O prazer é todo meu.','eu gosto de bolos, e vc ?']),
-   ('eu tbm',['meu favorito é o morango, e o seu ?']),
-   ('O meu tbm',['que conhecidencia.']),
+# Parcov é abreviação de 'pares de conversa'. Basicamente, estamos definindo 'o que' e 'como' o bot vai responder.
+parcov = [
+    ('oi', ['Oi! Como você está?']),
+    ('estou bem, obrigado por perguntar', ['Seu nome é {}, né?'.format(nome)]),
+    ('sim, e o seu?', ['Meu nome é Danone.']),
+    ('prazer, bot', ['O prazer é todo meu. Eu gosto de bolos, e você?']),
+    ('eu também', ['Meu favorito é o morango, e o seu?']),
+    ('O meu também', ['Que coincidência!']),
 ]
 
-'''Definindo a função para o usuario interagir com o bot e iniciar o chat'''
+# Definindo a função para o usuário interagir com o bot e iniciar o chat
 def iniciarchat():
-    print(f'bem vindo {nome}')
-    chatbot=Chat(parcov,reflections)
+    print(f'Bem-vindo, {nome}!')
+    chatbot = Chat(parcov, reflections)
     while True:
-        resposta=str(input('Você:'))
+        resposta = str(input(f'Você: '))
         if resposta == '':
-            print(f'Ei {nome}, ta ai ?')
-        elif resposta == 'sair':
-            print('até logo !')
+            print(f'Ei {nome}, tá aí?')
+        elif resposta.lower() == 'sair':
+            print('Até logo!')
             break
         else:
             respchat = chatbot.respond(resposta)
-            print('Chat{}',respchat)
+            print(f'ChatBot: {respchat}')
+
+# Baixando o pacote necessário
 nltk.download('punkt')
-''' Iniciando'''
+
+# Iniciando o chat
 iniciarchat()
