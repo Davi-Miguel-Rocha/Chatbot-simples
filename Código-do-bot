@@ -1,0 +1,49 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+nome=str(input('por favor antes de iniciar a conversa digite seu nome:'))
+parcov= parcov = [
+   ('oi', ['oi ! como você está ?']),
+   ('estou bem obrigado por perguntar', ['seu nome é {}, né ?'.format(nome)]),
+   ('sim e o seu ?',['meu nome é danone']),
+   ('prazer danone',['O prazer é todo meu.','eu gosto de kaijus, e vc ?']),
+   ('eu tbm',['meu favorito é o godzila hensei, e o seu ?']),
+   ('O meu tbm',['que conhecidencia.']),
+]
+def iniciarchat():
+    print(f'bem vindo {nome}')
+    chatbot=Chat(parcov,reflections)
+    while True:
+        resposta=str(input('Você:'))
+        if resposta == '':
+            print(f'Ei {nome}, ta ai ?')
+        elif resposta == 'sair':
+            print('até logo !')
+            break
+        else:
+            respchat = chatbot.respond(resposta)
+            print('Chat{}',respchat)
+nltk.download('punkt')
+iniciarchat()'''
+
+'''import nltk
+from nltk.chat.util import Chat,reflections
+nome=str(input('como devo te chamar ?'))
+parcov=parcov=[
+    ('oi',['oi tudo bem?']),
+    ('to bem e vc?',['eu estou bem obg por perguntar ^^']),
+    ('seu nome é koisuke ne?',[f'sim... e você é o {nome}']),
+    ('sim',['legal, eu gosto de kaijus e vc?']),
+    ('eu tbm',['que legal']),
+]
+def iniciarchat():
+    chatbot=Chat(parcov,reflections)
+    while True:
+      resposta=str(input('Você:'))
+      if resposta =='':
+         print('{}... você ta ai ?'.format(nome))
+      elif resposta =='sair':
+         print('Ah... tchauzinho')
+      respchat=chatbot.respond(resposta)
+      print('Koisuke:{}',respchat)
+nltk.download('punkt')
+iniciarchat()
