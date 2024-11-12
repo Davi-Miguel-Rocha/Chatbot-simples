@@ -5,8 +5,8 @@ parcov= parcov = [
    ('oi', ['oi ! como você está ?']),
    ('estou bem obrigado por perguntar', ['seu nome é {}, né ?'.format(nome)]),
    ('sim e o seu ?',['meu nome é danone']),
-   ('prazer danone',['O prazer é todo meu.','eu gosto de kaijus, e vc ?']),
-   ('eu tbm',['meu favorito é o godzila hensei, e o seu ?']),
+   ('prazer bot',['O prazer é todo meu.','eu gosto de bolos, e vc ?']),
+   ('eu tbm',['meu favorito é o morango, e o seu ?']),
    ('O meu tbm',['que conhecidencia.']),
 ]
 def iniciarchat():
