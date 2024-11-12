@@ -23,27 +23,4 @@ def iniciarchat():
             respchat = chatbot.respond(resposta)
             print('Chat{}',respchat)
 nltk.download('punkt')
-iniciarchat()'''
-
-'''import nltk
-from nltk.chat.util import Chat,reflections
-nome=str(input('como devo te chamar ?'))
-parcov=parcov=[
-    ('oi',['oi tudo bem?']),
-    ('to bem e vc?',['eu estou bem obg por perguntar ^^']),
-    ('seu nome é koisuke ne?',[f'sim... e você é o {nome}']),
-    ('sim',['legal, eu gosto de kaijus e vc?']),
-    ('eu tbm',['que legal']),
-]
-def iniciarchat():
-    chatbot=Chat(parcov,reflections)
-    while True:
-      resposta=str(input('Você:'))
-      if resposta =='':
-         print('{}... você ta ai ?'.format(nome))
-      elif resposta =='sair':
-         print('Ah... tchauzinho')
-      respchat=chatbot.respond(resposta)
-      print('Koisuke:{}',respchat)
-nltk.download('punkt')
 iniciarchat()
